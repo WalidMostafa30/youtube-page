@@ -78,7 +78,6 @@ header .logo-container .logo-img img {
   width: 120px;
   cursor: pointer;
 }
-header .logo-container .dark-mode .fa-sun,
 header .logo-container .bars-icon,
 header .search-container .back-icon {
   display: none;
@@ -168,8 +167,7 @@ nav {
   right: 0;
   z-index: 10;
   padding: 10px 0;
-  padding-bottom: 0;
-  overflow: scroll;
+  overflow: auto;
   transition: 0.3s;
 }
 nav::-webkit-scrollbar {
@@ -201,7 +199,7 @@ nav ul li.active {
 /* start videos-container */
 section .videos-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-top: 10px;
@@ -271,7 +269,8 @@ aside .mini-side-bar {
   right: 0;
   height: 100vh;
   padding-bottom: 40px;
-  overflow: scroll;
+  overflow: auto;
+  transition: 0.3s;
 }
 aside .big-side-bar::-webkit-scrollbar,
 aside .mini-side-bar::-webkit-scrollbar {
@@ -317,7 +316,6 @@ aside .mini-side-bar {
   display: none;
   flex-direction: column;
   justify-content: flex-start;
-  transition: 0.3s;
 }
 aside .mini-side-li {
   display: flex;
