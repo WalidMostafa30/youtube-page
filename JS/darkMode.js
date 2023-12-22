@@ -1,7 +1,6 @@
 // #################### dark mode code #####################
 let toggleBtn = document.querySelector(".dark-mode");
 let body = document.querySelector("body");
-let darkMode = false;
 let theme;
 let YouTube = document.querySelector(".logo-img img");
 let moon = document.querySelector(".fa-moon");
