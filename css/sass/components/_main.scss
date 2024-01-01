@@ -1,0 +1,212 @@
+main {
+  display: flex;
+  section {
+    width: 100%;
+    padding: 0 20px;
+    // start nav
+    nav {
+      background-color: var(--white-color);
+      position: sticky;
+      width: 100%;
+      top: 55px;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      padding: 10px 0;
+      overflow: auto;
+      transition: 0.3s;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        li {
+          background: var(--gray-color);
+          padding: 5px 10px;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: 0.2s;
+          font-size: 14px;
+          min-width: fit-content;
+          &:hover {
+            @extend %bg-hover;
+          }
+          &.active {
+            background: var(--black-color);
+            color: var(--white-color);
+          }
+        }
+      }
+    }
+    // end nav
+    // start videos-container
+    .videos-container {
+      @extend %flex-start;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      gap: 2%;
+      @media (min-width: 1400px) {
+        gap: 1.3%;
+      }
+      .video-card {
+        width: 32%;
+        min-height: 280px;
+        margin-bottom: 25px;
+        @media (min-width: 1400px) {
+          width: 24%;
+        }
+        @media (max-width: 991px) {
+          width: 49%;
+        }
+        @media (max-width: 600px) {
+          width: 100%;
+        }
+        .video-img {
+          position: relative;
+          .video-time {
+            position: absolute;
+            color: var(--white-color);
+            background-color: var(--black-color);
+            bottom: 8px;
+            left: 3px;
+            font-size: 13px;
+            padding: 1px 3px;
+            border-radius: 4px;
+            transition: 0.3s;
+          }
+          img {
+            border-radius: 10px;
+            transition: 0.3s;
+          }
+        }
+        .video-details {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+          gap: 10px;
+          margin-top: 5px;
+          .channel-img {
+            width: 30px;
+            border-radius: 50%;
+          }
+          .video-title {
+            font-size: 16px;
+            margin-bottom: 5px;
+          }
+          .channel-name,
+          .date-views {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    // end videos-container
+  }
+  //############################## start aside ###############################
+  aside {
+    width: 250px;
+    margin: 0 10px;
+    @media (max-width: 1200px) {
+      width: 100px;
+      .hidden-container {
+        background-color: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 1000;
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+        transform: translateX(100%);
+        &.open {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      width: 0;
+      margin: 0;
+    }
+    // start big-side-bar
+    .big-side-bar {
+      background-color: var(--white-color);
+      position: fixed;
+      top: 55px;
+      right: 0;
+      height: 100vh;
+      padding-bottom: 40px;
+      overflow: auto;
+      transition: 0.3s;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+      .big-side-ul {
+        @extend %flex-center;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid lightgray;
+        .big-side-li {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 20px;
+          width: 100%;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 8px;
+          &:hover {
+            @extend %bg-hover;
+          }
+          h4 {
+            font-size: 14px;
+            font-weight: 400;
+          }
+          h3 {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    // end big-side-bar
+    // start mini-side-bar
+    .mini-side-bar {
+      background-color: var(--white-color);
+      position: fixed;
+      top: 55px;
+      right: 0;
+      height: 100vh;
+      padding-bottom: 40px;
+      overflow: auto;
+      transition: 0.3s;
+      display: none;
+      flex-direction: column;
+      justify-content: flex-start;
+      @media (max-width: 1200px) {
+        display: flex;
+      }
+      @media (max-width: 768px) {
+        display: none;
+      }
+      .mini-side-li {
+        @extend %flex-center;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 14px;
+        padding: 20px 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        &:hover {
+          @extend %bg-hover;
+        }
+      }
+    }
+    // end mini-side-bar
+  }
+  //############################## end aside ###############################
+}

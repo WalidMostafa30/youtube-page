@@ -1,3 +1,14 @@
+.all-icon {
+  @extend %flex-center;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0 0.3s;
+  &:hover {
+    @extend %bg-hover;
+  }
+}
 %flex-center {
   display: flex;
   align-items: center;
@@ -15,10 +26,4 @@
 }
 %bg-hover {
   background-color: var(--hover-color);
-}
-%display-none{
-  display: none;
-}
-%display-flex{
-  display: flex;
 }

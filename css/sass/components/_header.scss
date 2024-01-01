@@ -1,0 +1,116 @@
+header {
+  background-color: var(--white-color);
+  @extend %flex-space-between;
+  height: 55px;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.3s;
+  z-index: 1100;
+  //   start logo container
+  .logo-container {
+    @extend %flex-center;
+    .logo-img img {
+      width: 120px;
+      cursor: pointer;
+    }
+    .bars-icon {
+      display: none;
+      @media (max-width: 1200px) {
+        display: flex;
+      }
+    }
+  }
+  // end logo container
+  // start search container
+  .search-container {
+    @extend %flex-center;
+    gap: 10px;
+    width: 50%;
+    padding: 0 10px;
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 55px;
+      background-color: var(--white-color);
+      transition: 0.5s ease-in-out;
+      transform: translatey(-100%);
+      &.open {
+        transform: translatey(0);
+      }
+    }
+    .search {
+      @extend %flex-center;
+      width: 80%;
+      input {
+        background-color: var(--white-color);
+        border: 1px solid lightgray;
+        height: 35px;
+        border-radius: 0 20px 20px 0;
+        padding: 0 10px;
+        outline: none;
+        width: 100%;
+        color: var(--black-color);
+        transition: 0.3s;
+      }
+      .srch-icon {
+        border: 1px solid lightgray;
+        border-right: none;
+        background-color: var(--gray-color);
+        border-radius: 20px 0 0 20px;
+        padding: 0 21px;
+        &:hover {
+          @extend %bg-hover;
+        }
+      }
+    }
+    .back-icon {
+      display: none;
+      @media (max-width: 768px) {
+        display: flex;
+      }
+    }
+  }
+  // end search container
+  // start profile container
+  .profile-container {
+    @extend %flex-center;
+    gap: 10px;
+    .microphone-clone,
+    .srch-clone {
+      display: none;
+      @media (max-width: 768px) {
+        display: flex;
+      }
+    }
+    .bell-icon {
+      position: relative;
+      span {
+        position: absolute;
+        background-color: #cc0000;
+        color: white;
+        top: 2px;
+        left: -3px;
+        padding: 0 3px;
+        border: 1px solid white;
+        border-radius: 20px;
+        font-size: 12px;
+      }
+    }
+    .profile-photo {
+      background-color: #00887a;
+      color: white;
+    }
+    @media (max-width: 430px) {
+      .microphone-clone,
+      .bell-icon {
+        display: none;
+      }
+    }
+  }
+  // end profile container
+}
